@@ -28,6 +28,66 @@ body {
     animation-fill-mode: forwards;
 }
 
+.scb-link {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.scb-link:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.amo-link {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.amo-link:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.dis-link {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.dis-link:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.lqd-link {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.lqd-link:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.pho-link {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.pho-link:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.arc-link {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.arc-link:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
 .crt {
     font-family: "VT323", monospace;
     font-size: 22px;
