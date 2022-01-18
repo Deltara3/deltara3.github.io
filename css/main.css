@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    background-color: #252626;
+    font-family: "VT323", monospace;
+}
+
+.nav {
+    font-family: "VT323", monospace;
+    font-size: 22px;
+}
+
+.nav a {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.nav a.active {
+    color: red;
+}
+
+@keyframes onhover {
+    to { color: white; }
+}
+
+.nav a:hover {
+    animation: onhover 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.crt {
+    font-family: "VT323", monospace;
+    font-size: 22px;
+    color: greenyellow
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.cursor {
+    animation: blink 0.85s infinite;
+}
