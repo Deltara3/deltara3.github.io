@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>DORIME</title>
+    <style>
+      html, body, button {
+        font-family: sans-serif;
+        font-size: 24pt;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id=dorime>DORIME</button><br><hr><br>
+    <button id=dorime2>DORIME 2</button><br><br>
+    <script>
+      masterExt = navigator.engmodeExtension || navigator.jrdExtension || navigator.kaiosExtension;
+      function xProcess(cmd) {
+        try {
+          alert(JSON.stringify(Components))
+          var file = Components.classes['@mozilla.org/file/local;1'].createInstance(Components.interfaces.nsILocalFile)
+          var process = Components.classes['@mozilla.org/process/util;1'].createInstance(Components.interfaces.nsIProcess)
+          var args = ['-c', cmd]
+          file.initWithPath('/system/bin/sh')
+          process.init(file)
+          process.runAsync(args, args.length, {})
+        } catch (e) {
+          alert('Error: ' + e)
+        }
+      }
+      document.getElementById('dorime').addEventListener('click', function() {
+
+        propSet = {
+          'service.adb.tcp.port': 5555,
+          'ctl.stop': 'adbd',
+          'ctl.start': 'adbd'
+        };
+        for(var key in propSet) {
+          try {
+            masterExt.setPropertyValue(key, propSet[key])
+          }
+          catch(e) {
+            alert('AMENO ' + key)
+          }
+        }
+        try {
+          masterExt.setPropertyValue('ctl.start', 'adbd')
+        } catch(e) {
+          alert(e)
+        }
+        alert('DORIME')
+      })
+      document.getElementById('dorime2').addEventListener('click', function() {
+        new MozActivity({
+          name: "configure"
+        })
+      })
+    </script>
+  </body>
+</html>
